@@ -1,6 +1,6 @@
 # Mounting a round Starlink Dishy to an RV in a fixed position
 
-![](/Users/clyde/dev/opensourceprojects/starnet/images/dishonroof.jpg)
+![](images/dishonroof.jpg)
 
 Now that Starlink has an RV plan that allows roaming anywhere within their service area, use on an RV has become very
 appealing. The standard Starlink dishes mount on a pole, and have inbuilt motors that point the dish in the most
@@ -98,7 +98,7 @@ unnecessary but it gave me peace of mind.
 
 The inside of the motor compartment looks like this now:
 
-![](/Users/clyde/dev/opensourceprojects/starnet/images/motorhousing.jpg)
+![](images/motorhousing.jpg)
 
 The motor cables have shrink-wrap to protect the connectors and are secured.
 
