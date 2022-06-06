@@ -160,7 +160,12 @@ into the template hole.
 
 ![](images/sikaflex.jpg)
 
-When dry (allow 24 hours) I applied a blob of silicone sealant to the sloped surface of each block and dropped the dish
+When dry (allow 24 hours) I removed the cardboard template.
+
+
+![](images/blocksonroof.jpg)
+
+Next I applied a blob of silicone sealant to the sloped surface of each block and dropped the dish
 in. The clamping blocks are secured with two M6x30 screws - I used some superglue on the screw threads since the formed
 threads in the printed block are not fantastic. They should still be removable, as will the silicone.
 
