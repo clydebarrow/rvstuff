@@ -160,9 +160,9 @@ into the template hole.
 
 ![](images/sikaflex.jpg)
 
-When dry (allow 24 hours) I applied a blob of silicone sealant to the top of each block and dropped the dish in. The
-clamping blocks are secured with two M6x30 screws - I used some superglue on these since the formed threads in the
-printed block are not fantastic. They will still be removable, as will the silicone.
+When dry (allow 24 hours) I applied a blob of silicone sealant to the sloped surface of each block and dropped the dish
+in. The clamping blocks are secured with two M6x30 screws - I used some superglue on the screw threads since the formed
+threads in the printed block are not fantastic. They should still be removable, as will the silicone.
 
 Run the cable to where you want it. I used flat electrical ducting (the kind with a removable cover.)
 
@@ -175,14 +175,14 @@ and a 12->48V DC-DC converter, allowing me to run the dish from 12V.
 
 ## POE Injector and pinout
 
-Power Over Ethernet supplies power over the same wires as are used for data and normally will provide +48V on pins
-1,2,4 and 5 (the orange and blue pairs) with the return on the remaining pairs. Starlink for unexplained reasons chose
-to use pins 1,2,3, and 6 (the orange and green pairs) for the positive voltage instead. The voltage can be anywhere
-between 48 and 56V (with a short cable the lower voltage will be fine.)
+Power Over Ethernet supplies power over the same wires as are used for data and normally will provide +48V on pins 1,2,4
+and 5 (the orange and blue pairs) with the return on the remaining pairs. Starlink for unexplained reasons chose to use
+pins 1,2,3, and 6 (the orange and green pairs) for the positive voltage instead. The voltage can be anywhere between 48
+and 56V (with a short cable the lower voltage will be fine.)
 
-Since off-the-shelf POE injectors are all wired to use the standard pairs, you either need a non-standard injector
-which is hard to come by, or perform some trickery with the wiring. By swapping the blue and green pairs on *both* sides
-of the injector the power ends up in the right place but the end-to-end mapping of cable pairs is unchanged.
+Since off-the-shelf POE injectors are all wired to use the standard pairs, you either need a non-standard injector which
+is hard to come by, or perform some trickery with the wiring. By swapping the blue and green pairs on *both* sides of
+the injector the power ends up in the right place but the end-to-end mapping of cable pairs is unchanged.
 
 
 
