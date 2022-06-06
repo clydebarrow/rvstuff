@@ -108,8 +108,7 @@ Thread the cable and tether through the hole in the motor compartment cover and 
 
 I closed up the opening in the motor compartment cover with a
 [3D printed snap-in closure](3d-models/Starlink%20closure.3mf). 
-
-
+![](images/Starlink closure.png)
 
 
 
