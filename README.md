@@ -8,8 +8,8 @@ The 3D files in the 3d-models directory are however all there.
 
 ## TL;DR
 
-* Remove the pole and motor from your round Dishy;
-* 3D print 6 mounting blocks and a case closure;
+* Remove the pole and motor from your round Dishy
+* 3D print 6 mounting blocks and a case closure
 * Glue to the top of your RV
 * Supply POE
 * Enjoy Starlink anywhere with no setup.
@@ -136,7 +136,7 @@ When everything was completed I sealed around the edge of this with some silicon
 Obviously you need enough space on your roof for the dish. The () is about 600mm diameter. I 3d printed 6 mounting
 blocks:
 
-![](images/Starlink mount.png)
+![](images/Starlink%20mount.png)
 
 Each block has a flat base which is glued to the RV roof, and a top clamp that secures the edge of the dish with 2 M6x30
 screws.
