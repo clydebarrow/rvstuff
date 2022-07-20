@@ -1,8 +1,5 @@
 # Mounting a round Starlink Dishy to an RV in a fixed position
-
-## DRAFT - to be completed
-
-The 3D files in the 3d-models directory are however all there.
+## (And general information on running Starlink from 12V)
 
 ![](images/dishonroof.jpg)
 
@@ -21,6 +18,8 @@ appealing. The standard Starlink dishes mount on a pole, and have inbuilt motors
 favourable direction for the given location. This is inconvenient for RV use since it either requires demounting the
 dish and storing it for travel, or some very clever arrangements. Also, while the pole is supposed to handle high winds,
 it's not intended for use on top of a moving vehicle, even when the dish is not in use.
+
+Also, the Starlink hardware runs only from 120-240VAC which is not ideal for use in an off-grid application where 12V is more readily available.
 
 This repository documents the solution I adopted to this problem. Some important caveats:
 
@@ -65,11 +64,9 @@ The Starlink dishes to date have come in three revisions;
 
 ## Getting a dish
 
-If you order a dish now from Starlink it will be a []. Starlink support says the RV plan (which allows month-by-month
-pausing) only supports [] and in any case currently you can't convert between residential plans and RV plans. However
-the residential plan does allow adding "Portability" which allows use of the dish anywhere in the service area (on the
-same continent) for an extra cost. You can buy () dishes second hand, and have the account transferred from the original
-owner, providing your service address is in an area that is active and not waitlisted.
+If you order a dish now from Starlink it will be a [], but () dishes are sometimes available second-hand - make sure if
+you buy one of these that the seller will transfer their account to you. You can enable mobility either with the RV plan or by adding "Portability" to the residential plan which allows use of the dish anywhere in the service area (on the
+same continent) for an extra cost. Starlink's plan offerings change fairly frequently so see their [support page](https://support.starlink.com/) for up-to-date information.
 
 ## Removing the pole and motors
 
@@ -171,12 +168,34 @@ threads in the printed block are not fantastic. They should still be removable, 
 
 Run the cable to where you want it. I used flat electrical ducting (the kind with a removable cover.)
 
+## Dish cable
+
+The cable supplied with the dish (either () or []) is an outdoor rated Cat5e ethernet cable. At the dish end there
+is a proprietary connector so it's impractical to do anything with this end. The () dish has a standard shielded RJ45
+connector on the other end of the cable that plugs into the Starlink-supplied power supply, but this is not directly
+usable unless you retain the Starlink power supply and in any case you will probably want to shorten the cable. The cable can be cut and
+reterminated with standard RJ45 connectors - the color coding is standard for data (T568B) but see below about power.
+
+## RJ45 wiring
+
+The standard (or at least the most common standard and the one used by Starlink) wiring convention for RJ45 ethernet cables is known as _T568B_ (or just 568B) and looks like this - viewed from the flat
+side of the connector, i.e. opposite the spring latch:
+
+![](/Users/clyde/dev/opensourceprojects/starnet/images/568B.jpg)
+
+To attach an RJ45 connector to the cable you need a suitable crimp tool. If you aren't familiar with the process either find
+someone who is or find one of the many Youtube videos that explain how to do it.
+
 ## Supplying power
 
-Dishy is powered by POE (Power over Ethernet) at 48-56V, but with non-standard pin connections. The cable is otherwise a
-standard shielded CAT5e ethernet cable. You could retain the standard Starlink POE power supply, but it requires
+Dishy is powered by POE (Power over Ethernet) at 48-56V, but with non-standard pin connections.
+You could retain the standard Starlink POE power supply, but it requires
 120-240VAC which means either being plugged into power or running an inverter. Instead, I used a passive POE injector
 and a 12->48V DC-DC converter, allowing me to run the dish from 12V.
+
+The [] dish power supply is built into the router, which also runs only from 120-240VAC and has a limited feature set,
+so it also benefits from using a custom POE injector and an after-market router which offers lower power consumption
+and more features.
 
 ## POE Injector and pinout
 
@@ -185,15 +204,53 @@ and 5 (the orange and blue pairs) with the return on the remaining pairs. Starli
 pins 1,2,3, and 6 (the orange and green pairs) for the positive voltage instead. The voltage can be anywhere between 48
 and 56V (with a short cable the lower voltage will be fine.)
 
-Since off-the-shelf POE injectors are all wired to use the standard pairs, you either need a non-standard injector which
-is hard to come by, or perform some trickery with the wiring. By swapping the blue and green pairs on *both* sides of
+Since off-the-shelf POE injectors are all wired to use the standard pairs, you either need a non-standard injector
+or to perform some trickery with the wiring. One source for a Starlink-specific POE injector is
+[Dishypowa.com](https://dishypowa.com/). If you use one of these the cable can be terminated with an RJ45
+shielded connector using standard 586B wiring.
+
+If you want to use a generic POE injector like the
+[Tycon POE-INJ-1000-WT](https://www.tyconsystems.com/poe-inj-1000-wt) then you will need to wire the RJ45 connector
+on the end of the Dishy cable (and on one end of the patch cable from the injector to your router) in a non-standard way. 
+By swapping the blue and green pairs on *both* sides of
 the injector the power ends up in the right place but the end-to-end mapping of cable pairs is unchanged.
 
+The _swapped_ wiring diagram for an RJ45 connector looks like this - as you can see it is the same as the 568B wiring but with the blue and green pairs swapped.
 
 
+![](/Users/clyde/dev/opensourceprojects/starnet/images/568-swapped.jpg)
 
 
+The entire wiring diagram then looks like this - note that the POE injector has swapped connectors on both sides, while the connector on the other end of the patch cable between the POE injector and the router is standard 568B.
+
+![](/Users/clyde/dev/opensourceprojects/starnet/images/Circuit.jpg)
 
 
+## DC-DC converter
 
+To provide the required 48VDC to the dish, you will need a 12-48V 
+DC-DC converter. The dish requires up to 120W during boot (and when in snow-melt mode) but you should over-size the DC-DC converter - the cheaper units tend to over-state their capabilities. I would recommend a minimum rating of 200W. I used 
+[this unit](https://www.amazon.com.au/gp/product/B09HV9GLMB)
+which is seriously over-sized for the job, and also requires a mounting case. Others have reported
+success with a [384W uxcell converter](https://www.amazon.com.au/uxcell-Big-Size-Waterproof-Converter-Regulator/dp/B01LYVSL53)
+which would make mounting easier. 
+
+If your DC-DC converter is adjustable (like the unit I used) you can set the
+output voltage a little higher than 48V, e.g. 52V, which will
+reduce the current slightly and ensure a solid 48V at the dish end
+after voltage drop in the cables. Do not exceed 56V.
+
+## Router
+
+The standard Starlink router is not able to run from 12V, and uses
+a fair bit of power, and has very few features (no VPN support, no guest network etc.) I used a [Gl.inet Slate router](https://www.amazon.com.au/GL-iNet-GL-AR750S-Ext-Gigabit-pre-Installed-Included/dp/B07GBXMBQF) which runs from 5V (so requires a 12v-5V converter), uses very little power and is based on OpenWRT making it very flexible. It has been working fine for me. Any other router that can run from 12V and has the features you need should work - the interface to Dishy is standard DHCP which is the default configuration for most routers.
+
+## 4G backup
+
+Although Starlink works almost everywhere, there are occasions where due to e.g. tree cover, some backup is useful. I plugged a
+Huawei E8372 USB 4G modem into the router for this purpose (with its internal WiFi turned off.) The Slate router can also act as a repeater from another WiFi network. The E8372 does not fit into the Slate router USB socket due to its size, so I used a short USB extension cable and mounted it with a 3D printed bracket - files for that are in this repository.
+
+## Power consumption
+
+The () dish seems to average around 30-35W power drain (including losses in the DC-DC converter) - I have heard the [] uses slightly less. The Slate router uses about 6W.
 
