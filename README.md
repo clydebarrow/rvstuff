@@ -181,7 +181,7 @@ reterminated with standard RJ45 connectors - the color coding is standard for da
 The standard (or at least the most common standard and the one used by Starlink) wiring convention for RJ45 ethernet cables is known as _T568B_ (or just 568B) and looks like this - viewed from the flat
 side of the connector, i.e. opposite the spring latch:
 
-![](/Users/clyde/dev/opensourceprojects/starnet/images/568B.jpg)
+![](images/568B.jpg)
 
 To attach an RJ45 connector to the cable you need a suitable crimp tool. If you aren't familiar with the process either find
 someone who is or find one of the many Youtube videos that explain how to do it.
@@ -218,12 +218,12 @@ the injector the power ends up in the right place but the end-to-end mapping of 
 The _swapped_ wiring diagram for an RJ45 connector looks like this - as you can see it is the same as the 568B wiring but with the blue and green pairs swapped.
 
 
-![](/Users/clyde/dev/opensourceprojects/starnet/images/568-swapped.jpg)
+![](images/568-swapped.jpg)
 
 
 The entire wiring diagram then looks like this - note that the POE injector has swapped connectors on both sides, while the connector on the other end of the patch cable between the POE injector and the router is standard 568B.
 
-![](/Users/clyde/dev/opensourceprojects/starnet/images/Circuit.jpg)
+![](images/Circuit.jpg)
 
 
 ## DC-DC converter
