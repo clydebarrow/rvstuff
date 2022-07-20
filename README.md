@@ -207,7 +207,7 @@ and 56V (with a short cable the lower voltage will be fine.)
 Since off-the-shelf POE injectors are all wired to use the standard pairs, you either need a non-standard injector
 or to perform some trickery with the wiring. One source for a Starlink-specific POE injector is
 [Dishypowa.com](https://dishypowa.com/). If you use one of these the cable can be terminated with an RJ45
-shielded connector using standard 586B wiring.
+shielded connector using standard 568B wiring.
 
 If you want to use a generic POE injector like the
 [Tycon POE-INJ-1000-WT](https://www.tyconsystems.com/poe-inj-1000-wt) then you will need to wire the RJ45 connector
@@ -229,9 +229,9 @@ The entire wiring diagram then looks like this - note that the POE injector has 
 ## DC-DC converter
 
 To provide the required 48VDC to the dish, you will need a 12-48V 
-DC-DC converter. The dish requires up to 120W during boot (and when in snow-melt mode) but you should over-size the DC-DC converter - the cheaper units tend to over-state their capabilities. I would recommend a minimum rating of 200W. I used 
+DC-DC converter. The dish requires up to 120W during boot (and when in snow-melt mode) but you should over-size the DC-DC converter - the cheaper units tend to over-state their capabilities. I would recommend a minimum rating of 250W. I used 
 [this unit](https://www.amazon.com.au/gp/product/B09HV9GLMB)
-which is seriously over-sized for the job, and also requires a mounting case. Others have reported
+which is seriously over-sized for the job, and also requires a mounting case (3d model for that in this repository.) Others have reported
 success with a [384W uxcell converter](https://www.amazon.com.au/uxcell-Big-Size-Waterproof-Converter-Regulator/dp/B01LYVSL53)
 which would make mounting easier. 
 
