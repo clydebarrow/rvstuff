@@ -16,7 +16,7 @@ the router and/or power supply with a custom POE injector and an after-market ro
 ## Dish cable
 
 The cable supplied with the dish (either () or []) is an outdoor rated Cat5e ethernet cable. Any other ethernet cable
-you use (e.g. from the POE injector to the router) should be at Cat5e or Cat6.
+you use (e.g. from the POE injector to the router) should be shielded Cat5e or Cat6.
 
 ## Connectors
 
