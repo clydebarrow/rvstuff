@@ -34,7 +34,7 @@ Core Electronics which is very cheap, and can be adjusted to deliver the correct
 which is more than enough for the job. I cut the cable with plug off the Sony AC power supply and wired it to the DC
 output.
 
-![](dcdc converter.jpg)
+![](dcdc%20converter.jpg)
 
 The converter could be just mounted to a panel, but I preferred to enclose it, so 3D printed a case.
 The files for this are included here:
@@ -45,7 +45,7 @@ The files for this are included here:
 
 The case is about 70x40x50mm.
 
-![](DCDC housing v4.png)
+![](DCDC%20housing%20v4.png)
 
 The DC-DC supply should be supplied with 12V via a suitable circuit breaker (e.g. 10A). Keep the cables short and make
 sure the wire gauge especially on the 12V side is adequate for up to 10A.
