@@ -109,6 +109,10 @@ output voltage a little higher than 48V, e.g. 52V, which will
 reduce the current slightly and ensure a solid 48V at the dish end
 after voltage drop in the cables. Do not exceed 56V.
 
+The power supply and POE injector look like this installed in their case:
+
+![](images/dcdc in box.jpg)
+
 ## 12V supply
 
 Your 12V supply to the DC-DC converter should be rated for at least 15A (it will not draw that much continuously) so use
