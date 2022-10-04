@@ -111,7 +111,7 @@ after voltage drop in the cables. Do not exceed 56V.
 
 The power supply and POE injector look like this installed in their case:
 
-![](images/dcdc in box.jpg)
+![](images/dcdc%20in%20box.jpg)
 
 ## 12V supply
 
